@@ -270,7 +270,7 @@ def setAlarm(lcdHandle):
                     notificationAction = alarmMode + '_mode_alarm_armed'
                 
                     lcdHandle.clear();
-                    '''
+                    
                     if action=='None':
                         lcdHandle.write_string(alarmMode+' mode on')
                         delay(3)
@@ -281,7 +281,13 @@ def setAlarm(lcdHandle):
                         lcdHandle.write_string('or unset remote\n\rdatabase,');
                         delay(3);
                         lcdHandle.clear();
-                        lcdHandle.write_string("alarm records\n\rare not updated.")
+                        lcdHandle.write_string("alarm records\n\rare not updated")
+                        delay(3)
+                        lcdHandle.clear();
+                        lcdHandle.write_string("and no alarm\n\rnotifications")
+                        delay(3)
+                        lcdHandle.clear();
+                        lcdHandle.write_string("will be\n\rdelivered.")
                         delay(3)
                         lcdHandle.clear();
                         lcdHandle.write_string('You have '+str(leaveHouseTimeout)+' \n\rseconds to leave')
@@ -301,7 +307,7 @@ def setAlarm(lcdHandle):
                             buzzerHandle.start(buzzerDutyCycle)
                     
                         buzzerHandle.stop()
-                    '''
+                    
                 
                     currentDatetime=currentDateFormatted("%d/%m/%Y %H:%M:%S");
                     recordsDocumentReference = firestoreDbHandle.collection(firestoreRecordsCollection).document(userId);
@@ -340,8 +346,6 @@ def setAlarm(lcdHandle):
                     action = armed_alarm(lcdHandle,alarmMode,buzzerHandle)
                     if action!='correct_code_alarm_disarmed':
                         choiceIndex=1
-                        lcdHandle.clear()
-                        lcdHandle.write_string('Setting\n\routhouse mode...');
                         delay(4)
                 lcdHandle.clear()
                 lcdHandle.write_string(' '+alarm_menu_options[0]+'\n\r')
@@ -584,7 +588,7 @@ def alarmSound(lcdHandle,buzzerHandle):
         else:
             disarmedState='idle';
             lcdHandle.clear()
-            lcdHandle.write_string('Alarm timeout.\n\rAlarm disarmed.');
+            lcdHandle.write_string('Alarm timeout.\n\rResetting alarm.');
             storeSqlEntry(userPassword,'alarm timeout disarmed',userId)
             notification_action='alarm_timeout_alarm_disarmed'
             currentDatetime = currentDateFormatted("%d/%m/%Y %H:%M:%S");

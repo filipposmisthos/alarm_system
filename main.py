@@ -7,8 +7,8 @@ lcdHandle = configureLcd()
 
 initializeFirebase()
 
-#userIsAuthorized = authorizedUser(lcdHandle);
-userIsAuthorized = True
+userIsAuthorized = authorizedUser(lcdHandle);
+#userIsAuthorized = True
 
 if userIsAuthorized:
     startMenu(lcdHandle)
