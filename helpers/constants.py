@@ -28,7 +28,7 @@ alarm_menu_options = ['In House Mode','Out House Mode']
 
 
 #leaveHouseTimeout = 5# actual timeout seconds
-leaveHouseTimeout = 1
+leaveHouseTimeout = 20 #20 change
 
 buzzerFrequency = 750
 
@@ -37,8 +37,8 @@ buzzerFrequencyAlarm = 950
 buzzerDutyCycle = 50
 
 #disarmAlarmTimeout = 22 # actual timeout seconds + 2
-disarmAlarmTimeout= 7
+disarmAlarmTimeout= 22
 #triggeredAlarmTimeout = 21 # actual timeout seconds + 1
-triggeredAlarmTimeout = 6
+triggeredAlarmTimeout = 20
 
 recordsMaxCapacity = 10

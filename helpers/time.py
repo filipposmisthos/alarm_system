@@ -4,7 +4,7 @@ from datetime import datetime
 
 def currentDateFormatted(format):
     datetimeNow = datetime.now();
-    formattedDatetimeNow = datetimeNow.strftime("%d/%m/%Y %H:%M:%S");
+    formattedDatetimeNow = datetimeNow.strftime(format);
     return formattedDatetimeNow;
 
 def delay(time_in_seconds):

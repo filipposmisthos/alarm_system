@@ -272,6 +272,7 @@ def setAlarm(lcdHandle):
                     lcdHandle.clear();
                     
                     if action=='None':
+                        
                         lcdHandle.write_string(alarmMode+' mode on')
                         delay(3)
                         lcdHandle.clear()
@@ -292,6 +293,7 @@ def setAlarm(lcdHandle):
                         lcdHandle.clear();
                         lcdHandle.write_string('You have '+str(leaveHouseTimeout)+' \n\rseconds to leave')
                         delay(3)
+                        
                         lcdHandle.clear()
                     
                         lcdHandle.cursor_pos = (0,1)
